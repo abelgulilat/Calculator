@@ -1,0 +1,29 @@
+
+#form{
+    text-align: center;
+    background-color: rgba(82, 30, 30, 0.479);
+    padding: 50px 50px;
+    margin: 100px 350px;
+    border: 1px solid paleturquoise;
+    border-radius: 5px;
+    box-shadow: 10px;
+}
+.pad{
+    background-color: rgba(41, 17, 17, 0.226);
+    color: aliceblue;
+    border: 1px solid rgba(41, 17, 17, 0.226);
+}
+.pad1{
+    border: 1px solid rgba(41, 17, 17, 0.226);
+}
+
+input{
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+#equal{
+    background-color: blueviolet;
+}
+.mySize{
+    border-radius: 10px;
+}

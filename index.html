@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./assets/css/indexcalculator.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+</head>
+<body>
+
+    <h1 style="text-align: center; text-transform:uppercase; padding-top: 50px;" id="h11">Calculator</h1>
+
+    <form action="#" method="post" id="form"  >
+        <input type="text" name="" id="answer" placeholder="0">
+
+        <br><br>
+        <input type="button" onclick="display(value)" onmouseover="ch1left()" onmouseout="ch2left()" name="allpad" class="pad1"  value="(" id="left">
+        <input type="button" onclick="display(value)" onmouseover="ch1right()" onmouseout="ch2right()" name="allpad" class="pad1"  value=")" id="right">
+        <input type="button" onclick="display(value)" onmouseover="ch1module()" onmouseout="ch2module()" name="allpad" class="pad1"  value="%" id="module">
+        <input type="button" onclick="clears()"       onmouseover="ch1ac()" onmouseout="ch2ac()" name="allpad" class="pad1"  value="AC"id="cancel" style="padding: 10px;">
+        <br><br>
+        <input type="button" onclick="display(value)" onmouseover="ch1i()" onmouseout="ch2i()" name="allpad" class="pad"   value="7" id="seven">
+        <input type="button" onclick="display(value)" onmouseover="ch1j()" onmouseout="ch2j()" name="allpad" class="pad"   value="8" id="eight">
+        <input type="button" onclick="display(value)" onmouseover="ch1k()" onmouseout="ch2k()" name="allpad" class="pad"   value="9" id="nine">
+        <input type="button" onclick="display(value)" onmouseover="ch1divid()" onmouseout="ch2divid()" name="allpad" class="pad1"  value="/" id="divide">
+        <br><br>
+        <input type="button" onclick="display(value)" onmouseover="ch1f()" onmouseout="ch2f()" name="allpad" class="pad"   value="4" id="four">
+        <input type="button" onclick="display(value)" onmouseover="ch1g()" onmouseout="ch2g()" name="allpad" class="pad"   value="5" id="five">
+        <input type="button" onclick="display(value)" onmouseover="ch1h()" onmouseout="ch2h()" name="allpad" class="pad"   value="6" id="six">
+        <input type="button" onclick="display(value)" onmouseover="ch1product()" onmouseout="ch2product()" name="allpad" class="pad1"  value="*" id="product">
+        <br><br>  
+        <input type="button" onclick="display(value)" onmouseover="ch1c()" onmouseout="ch2c()" name="allpad" class="pad"   value="1" id="one">
+        <input type="button" onclick="display(value)" onmouseover="ch1d()" onmouseout="ch2d()" name="allpad" class="pad"   value="2" id="two">
+        <input type="button" onclick="display(value)" onmouseover="ch1e()" onmouseout="ch2e()" name="allpad" class="pad"   value="3" id="three">
+        <input type="button" onclick="display(value)" onmouseover="ch1minus()" onmouseout="ch2minus()" name="allpad" class="pad1"  value="-" id="mins">
+        <br><br> 
+        <input type="button" onclick="display(value)" onmouseover="ch1zero()" onmouseout="ch2zero()" name="allpad" class="pad1"  value="0" id="zero">
+        <input type="button" onclick="display(value)" onmouseover="ch1dot()" onmouseout="ch2dot()" name="allpad" class="pad1"  value="." id="dot">
+        <input type="button" onclick="compute()" onmouseover="ch1equal()" onmouseout="ch2equal()" name="allpad" class="pad"   value="=" id="equal">
+
+        <input type="button" onclick="display(value)" onmouseover="ch1plus()" onmouseout="ch2plus()" name="allpad" class="pad1"  value="+" id="plus">
+
+
+    </form>
+    
+    <script src="./assets/js/indexcalcultor.js"></script>
+</body>
+</html>
