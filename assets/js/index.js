@@ -27,19 +27,25 @@ let w = document.getElementsByClassName("pad");
 let x = document.getElementById("h11");
 let y = document.getElementById("zero");
 
+// =====================================================================================================================
+
 
 let aa = new Array();
 let bb = new Array();
-
+let temp = 0;
 
 let display=(z)=>{
     b.value += z;
-    if(z <= 1000000)
-        aa.push(z);
-    else
-    
-        bb.push(z);
-        
+    if(z<1000000){
+        temp += z;
+
+    }
+    else{
+    aa.push(temp);
+    aa.push(z);
+    temp = 0;
+
+    }
 
 }
 
@@ -49,46 +55,106 @@ let clears =()=>{
     
 }
 
-let compute =()=>{
-    // b.value = eval(b.value);
-    
-    let wi = bb.length;
-    let neg = false;
-    for(let i = 0; i <= wi; i++)
-        {   
-            let tempo = bb.pop();
-            
 
-            if( tempo == "+")
-                {
-                    let res = add(aa.pop(),aa.pop());
-                    aa.push(res);
-                }
-            else if( tempo == "-")
-                {
-                    
-                    
-                    res = sub(aa.pop(),aa.pop());
-                    aa.push(res);
-
-                    // console.log("abwl", sub(aa.pop(),aa.pop()));
-                }
-            else if( tempo == "*")
-                {
-                    console.log("abwl", pro(aa.pop(),aa.pop()));
-                }
-            else if( tempo == "/")
-                {
-                    console.log("abwl", di(aa.pop(),aa.pop()));
-                }
-
-        }
-        let reserve = aa.pop();
-        // console.log(reserve);
-        aa.push(reserve);
-        b.value = reserve;
+const add=(num1,num2)=>{
+    return parseInt(num1) + parseInt(num2) ;
+}
+const sub=(num1,num2)=>{
+    return parseInt(num1) - parseInt(num2) ;
 }
 
+
+
+let compute =()=>{
+    aa.push(temp);
+    temp = 0;
+
+
+    let isFinshed = false;
+    let i = 0; 
+    while(i<aa.length && !isFinshed)
+        {
+
+            if(i==aa.length-1){
+                isFinshed = true;
+            }
+
+            if(aa[i]=="/")
+                {
+                    let result = aa[i-1]/aa[i+1];
+                    aa.splice(i-1,3,result);
+                    i = 0;  
+                    // i=i-1;
+
+                }
+            
+                i++;
+        }
+    i=0;
+    isFinshed = false;    
+    while(i<aa.length && !isFinshed){
+
+        if(i==aa.length-1){
+            isFinshed = true;
+        }
+
+        if(aa[i]=="*")
+            {
+                let result = aa[i-1]*aa[i+1];
+                aa.splice(i-1,3,result);
+                i = 0;
+
+            }
+            i++;
+        
+    }
+
+    i=0;
+
+    isFinshed = false;    
+    while(i<aa.length && !isFinshed){
+
+        if(i==aa.length-1){
+            isFinshed = true;
+        }
+
+        if(aa[i]=="+")
+            {
+                let result = parseFloat( aa[i-1])+parseFloat( aa[i+1]);
+                aa.splice(i-1,3,result);
+                i = 0;
+
+            }
+            i++;
+        
+    }
+
+    i=0;
+
+    isFinshed = false;    
+
+    while(i<aa.length && !isFinshed){
+
+        if(i == aa.length-1){
+            isFinshed = true;
+        }
+
+        if(aa[i]=="-")
+            {
+                let result = aa[i-1]-aa[i+1];
+                aa.splice(i-1,3,result);
+                i = 0;
+
+            }
+        i++;
+    }
+    b.value = aa[0];
+
+    
+}
+
+
+// =====================================================================================================================
 
 
 function ch1k(){k.style.background = "violet";}
@@ -111,7 +177,6 @@ function ch1i(){i.style.background = "violet";}
 function ch2i(){i.style.background = "";}
 function ch1j(){j.style.background = "violet";}
 function ch2j(){j.style.background = "";}
-
 function ch1left(){t.style.background = "violet";}
 function ch2left(){t.style.background = "";}
 function ch1right(){u.style.background = "violet";}
@@ -132,30 +197,12 @@ function ch1dot(){q.style.background = "violet";}
 function ch2dot(){q.style.background = "";}
 function ch1zero(){y.style.background = "violet";}
 function ch2zero(){y.style.background = "";}
-
 function ch1equal(){p.style.background = "purple";p.style.color = "black"}
 function ch2equal(){p.style.background = "";}
 
 
+// =====================================================================================================================
 
-
-let add=( num1,num2)=>{
-        return parseInt(num1) + parseInt(num2) ;
-}
-let sub=(num1,num2)=>{
-        return parseInt(num1) - parseInt(num2) ;
-}
-// let pro=(let aa,let bb)=>{
-//         return this.aa * this.bb ;
-// }
-// let di=(let aa,let bb)=>{
-//     if(this.bb!=0)
-//         return this.aa / this.bb ;
-//     else
-//         return "Undefined" ;
-// }
-
-    
 
 
 
